@@ -6,18 +6,18 @@ The image creates a database called docker, with a blank dbadmin password.
 
 ## Usage:
 
-Download the Vertica RPM from https://my.vertica.com and put it in this folder.
+Download the Vertica RPM from https://my.vertica.com and put it in this folder as "vertica.rpm".
 Then run:
 ```bash
-docker build -t bluelabs/vertica .
+docker build -t lukashes/vertica .
 ```
 
 ### To run without a persistent datastore
 ```bash
-docker run -P  bluelabs/vertica
+docker run -P  lukashes/vertica
 ```
 
 ### To run with a persistent datastore
 ```bash
-docker run -P -v /path/to/vertica_data:/home/dbadmin/docker bluelabs/vertica
+docker run -P -v /path/to/vertica_data:/home/dbadmin/docker lukashes/vertica
 ```

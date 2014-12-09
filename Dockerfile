@@ -1,5 +1,5 @@
 FROM centos:centos6
-MAINTAINER Joe Arasin <joe.arasin@bluelabs.com>
+MAINTAINER Yegor Lukash <yegor.lukash@gmail.com>
 
 # Update the image
 RUN yum update -y; yum clean all
@@ -16,14 +16,14 @@ RUN yum install -y curl \
 RUN yum clean all
 
 ENV LANG en_US.utf8
-ENV TZ "US/Eastern"
+ENV TZ "Europe/Moscow"
 
 RUN groupadd -r verticadba
 RUN useradd -r -m -g verticadba dbadmin
 
-ADD vertica-7.0.2-1.x86_64.RHEL5.rpm /rpms/vertica-7.0.2-1.x86_64.RHEL5.rpm
+ADD vertica.rpm /rpms/vertica.rpm
 
-RUN yum install -y /rpms/vertica-7.0.2-1.x86_64.RHEL5.rpm
+RUN yum install -y /rpms/vertica.rpm
 
 # In theory, someone should make things work without ignoring the errors.
 # But that's in theory, and for now, this seems sufficient.
