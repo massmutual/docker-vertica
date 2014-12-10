@@ -4,9 +4,11 @@ Warning: This is very experimental. The level of testing has consisted of "Start
 
 The image creates a database called docker, with a blank dbadmin password.
 
+Base OS is Ubuntu 14.04.
+
 ## Usage:
 
-Download the Vertica RPM from https://my.vertica.com and put it in this folder as "vertica.rpm".
+Download the Vertica DEB package from https://my.vertica.com and put it in this folder as "vertica.deb".
 Then run:
 ```bash
 docker build -t lukashes/vertica .
