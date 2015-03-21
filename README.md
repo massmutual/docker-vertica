@@ -11,15 +11,21 @@ Base OS is Ubuntu 14.04.
 Download the Vertica DEB package from https://my.vertica.com and put it in this folder as "vertica.deb".
 Then run:
 ```bash
-docker build -t lukashes/vertica .
+docker build -t sumitchawla/vertica .
 ```
 
 ### To run without a persistent datastore
 ```bash
-docker run -P  lukashes/vertica
+docker run -p 5433:5433  sumitchawla/vertica
 ```
 
 ### To run with a persistent datastore
 ```bash
-docker run -P -v /path/to/vertica_data:/home/dbadmin/docker lukashes/vertica
+docker run -p 5433:5433 -d -v /path/to/vertica_data:/home/dbadmin/docker sumitchawla/vertica
 ```
+### Connection Parameters
+ Default DB Name - docker
+ 
+ Default User - dbadmin
+ 
+ Default Password (NO PASSWORD) - 
