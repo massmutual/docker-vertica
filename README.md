@@ -4,8 +4,13 @@
 Base OS is Ubuntu 14.04.
 
 ## Usage:
+You can either pull the image from Docker Registry using following command:
 
-Download the Vertica DEB package from https://my.vertica.com and put it in this folder as "vertica.deb".
+```bash
+docker pull sumitchawla/vertica .
+```
+
+Or, build your own image using following command. Download the Vertica DEB package from https://my.vertica.com and put it in this folder as "vertica.deb".
 Then run:
 ```bash
 docker build -t sumitchawla/vertica .
