@@ -1,5 +1,6 @@
 # Docker Image for Vertica
 
+The image is available in Docker registry at https://registry.hub.docker.com/u/sumitchawla/vertica/
 
 Base OS is Ubuntu 14.04.
 
