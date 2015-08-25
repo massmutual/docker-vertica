@@ -1,25 +1,34 @@
 # Docker Image for Vertica
 
-Warning: This is very experimental. The level of testing has consisted of "Start server, run some sql, shutdown server, restart server, run some sql". What it does manage to do is get a vertica process up and running in a docker container. For the purposes of testing applications with fig and such, this might be sufficient, but don't let it anywhere near production.
-
-The image creates a database called docker, with a blank dbadmin password.
+The image is available in Docker registry at https://registry.hub.docker.com/u/sumitchawla/vertica/
 
 Base OS is Ubuntu 14.04.
 
 ## Usage:
+You can either pull the image from Docker Registry using following command:
 
-Download the Vertica DEB package from https://my.vertica.com and put it in this folder as "vertica.deb".
+```bash
+docker pull sumitchawla/vertica
+```
+
+Or, build your own image using following command. Download the Vertica DEB package from https://my.vertica.com and put it in this folder as "vertica.deb".
 Then run:
 ```bash
-docker build -t lukashes/vertica .
+docker build -t sumitchawla/vertica .
 ```
 
 ### To run without a persistent datastore
 ```bash
-docker run -P  lukashes/vertica
+docker run -p 5433:5433  sumitchawla/vertica
 ```
 
 ### To run with a persistent datastore
 ```bash
-docker run -P -v /path/to/vertica_data:/home/dbadmin/docker lukashes/vertica
+docker run -p 5433:5433 -d -v /path/to/vertica_data:/home/dbadmin/docker sumitchawla/vertica
 ```
+### Connection Parameters
+ Default DB Name - docker
+ 
+ Default User - dbadmin
+ 
+ Default Password (NO PASSWORD) - 
