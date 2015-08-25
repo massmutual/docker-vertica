@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER Yegor Lukash <yegor.lukash@gmail.com>
+MAINTAINER Sumit Chawla <sumitkchawla@gmail.com>
 
 # Update the image
 RUN apt-get update -y && apt-get upgrade -y
