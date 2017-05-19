@@ -39,7 +39,7 @@ RUN /opt/vertica/sbin/install_vertica --license CE --accept-eula --hosts 127.0.0
 
 # Test DB creation as dbuser
 USER dbadmin
-RUN /opt/vertica/bin/admintools -t create_db -s localhost -d docker -c /home/dbadmin/docker/catalog -D /home/dbadmin/docker/data
+RUN /opt/vertica/bin/admintools -t create_db -s localhost -d docker -c /home/dbadmin/docker/catalog -D /home/dbadmin/docker/data --skip-fs-checks
 
 USER root
 
