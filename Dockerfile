@@ -5,7 +5,7 @@ MAINTAINER Sumit Chawla <sumitkchawla@gmail.com>
 RUN apt-get update -y && apt-get upgrade -y
 
 # Install Dependencies
-RUN apt-get install -y openssh-server openssh-client mcelog gdb sysstat dialog
+RUN apt-get install -y openssh-server openssh-client mcelog gdb sysstat dialog default-jre
 
 # grab gosu for easy step-down from root
 RUN apt-get install -y curl \
